@@ -69,3 +69,90 @@ INSERT INTO GAMESESSION VALUES(16,'Waiter',NULL,'Waiting Game')
 ALTER SEQUENCE PUBLIC.HIBERNATE_SEQUENCE RESTART WITH 17
 COMMIT
 DISCONNECT
+/*C12*/DISCONNECT
+/*C14*/SET SCHEMA PUBLIC
+ALTER SEQUENCE PUBLIC.HIBERNATE_SEQUENCE RESTART WITH 20
+DISCONNECT
+/*C3*/DROP Table Logentry
+DROP Table Gamesession
+/*C16*/SET SCHEMA PUBLIC
+create table GameSession (Id bigint not null, playerName varchar(255), sessionName varchar(255), primary key (Id))
+create table GameSession_LogEntry (GameSession_Id bigint not null, sessionLog_id integer not null)
+create table LogEntry (id integer not null, date timestamp, message varchar(255), primary key (id))
+alter table GameSession_LogEntry add constraint UK_iru7wji8mkgrq5w0rrfx6wm1t unique (sessionLog_id)
+alter table GameSession_LogEntry add constraint FKhd5hx8ivr8qm0ihd2w73dlj3b foreign key (sessionLog_id) references LogEntry
+alter table GameSession_LogEntry add constraint FKd4wgx81xk793nidnjn2r1dbl1 foreign key (GameSession_Id) references GameSession
+ALTER SEQUENCE PUBLIC.HIBERNATE_SEQUENCE RESTART WITH 23
+/*C15*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C16*/DISCONNECT
+/*C3*/DROP Table Gamesession_Logentry\u000a
+DROP Table Logentry
+DROP Table Gamesession
+/*C17*/SET SCHEMA PUBLIC
+create table GameSession (Id bigint not null, playerName varchar(255), sessionName varchar(255), primary key (Id))
+create table GameSession_LogEntry (GameSession_Id bigint not null, sessionLog_id integer not null)
+create table LogEntry (id integer not null, date timestamp, message varchar(255), primary key (id))
+alter table GameSession_LogEntry add constraint UK_iru7wji8mkgrq5w0rrfx6wm1t unique (sessionLog_id)
+alter table GameSession_LogEntry add constraint FKhd5hx8ivr8qm0ihd2w73dlj3b foreign key (sessionLog_id) references LogEntry
+alter table GameSession_LogEntry add constraint FKd4wgx81xk793nidnjn2r1dbl1 foreign key (GameSession_Id) references GameSession
+ALTER SEQUENCE PUBLIC.HIBERNATE_SEQUENCE RESTART WITH 26
+/*C3*/DROP Table Gamesession_Logentry\u000a
+DROP Table Logentry
+DROP Table Gamesession
+/*C17*/DISCONNECT
+/*C18*/SET SCHEMA PUBLIC
+create table GameSession (Id bigint not null, playerName varchar(255), sessionName varchar(255), primary key (Id))
+create table GameSession_LogEntry (GameSession_Id bigint not null, sessionLog_id integer not null)
+create table LogEntry (id integer not null, date timestamp, message varchar(255), primary key (id))
+alter table GameSession_LogEntry add constraint UK_iru7wji8mkgrq5w0rrfx6wm1t unique (sessionLog_id)
+alter table GameSession_LogEntry add constraint FKhd5hx8ivr8qm0ihd2w73dlj3b foreign key (sessionLog_id) references LogEntry
+alter table GameSession_LogEntry add constraint FKd4wgx81xk793nidnjn2r1dbl1 foreign key (GameSession_Id) references GameSession
+INSERT INTO GAMESESSION VALUES(26,'Andreas','Spiel 1')
+INSERT INTO LOGENTRY VALUES(27,'2018-10-16 15:56:38.696000','PlayerName: Andreas opened new GameSession Spiel 1')
+INSERT INTO LOGENTRY VALUES(28,'2018-10-16 15:56:38.696000','PlayerName: Ralf joined session Spiel 1')
+INSERT INTO LOGENTRY VALUES(29,'2018-10-16 15:56:38.696000','PlayerName: Sascha joined session Spiel 1')
+INSERT INTO LOGENTRY VALUES(30,'2018-10-16 15:56:38.696000','PlayerName: Andreas started game in session Spiel 1')
+INSERT INTO GAMESESSION VALUES(31,'Tom','Spiel 2')
+INSERT INTO LOGENTRY VALUES(32,'2018-10-16 15:56:38.696000','PlayerName: Tom opened new GameSession Spiel 2')
+INSERT INTO LOGENTRY VALUES(33,'2018-10-16 15:56:38.696000','PlayerName: Christopher joined session Spiel 2')
+INSERT INTO LOGENTRY VALUES(34,'2018-10-16 15:56:38.696000','PlayerName: Tom started game in session Spiel 2')
+INSERT INTO GAMESESSION VALUES(35,'Waiter','Waiting Game')
+INSERT INTO LOGENTRY VALUES(36,'2018-10-16 15:56:38.696000','PlayerName: Waiter opened new GameSession Waiting Game')
+INSERT INTO GAMESESSION_LOGENTRY VALUES(26,27)
+INSERT INTO GAMESESSION_LOGENTRY VALUES(26,28)
+INSERT INTO GAMESESSION_LOGENTRY VALUES(26,29)
+INSERT INTO GAMESESSION_LOGENTRY VALUES(26,30)
+INSERT INTO GAMESESSION_LOGENTRY VALUES(31,32)
+INSERT INTO GAMESESSION_LOGENTRY VALUES(31,33)
+INSERT INTO GAMESESSION_LOGENTRY VALUES(31,34)
+INSERT INTO GAMESESSION_LOGENTRY VALUES(35,36)
+ALTER SEQUENCE PUBLIC.HIBERNATE_SEQUENCE RESTART WITH 37
+COMMIT
+DISCONNECT
+/*C3*/DISCONNECT
+/*C19*/SET SCHEMA PUBLIC
+alter table GameSession_LogEntry drop constraint UK_iru7wji8mkgrq5w0rrfx6wm1t
+alter table GameSession_LogEntry add constraint UK_iru7wji8mkgrq5w0rrfx6wm1t unique (sessionLog_id)
+INSERT INTO GAMESESSION VALUES(37,'Andreas','Spiel 1')
+INSERT INTO LOGENTRY VALUES(38,'2018-10-16 16:03:25.535000','PlayerName: Andreas opened new GameSession Spiel 1')
+INSERT INTO LOGENTRY VALUES(39,'2018-10-16 16:03:25.535000','PlayerName: Ralf joined session Spiel 1')
+INSERT INTO LOGENTRY VALUES(40,'2018-10-16 16:03:25.535000','PlayerName: Sascha joined session Spiel 1')
+INSERT INTO LOGENTRY VALUES(41,'2018-10-16 16:03:25.535000','PlayerName: Andreas started game in session Spiel 1')
+INSERT INTO GAMESESSION VALUES(42,'Tom','Spiel 2')
+INSERT INTO LOGENTRY VALUES(43,'2018-10-16 16:03:25.535000','PlayerName: Tom opened new GameSession Spiel 2')
+INSERT INTO LOGENTRY VALUES(44,'2018-10-16 16:03:25.535000','PlayerName: Christopher joined session Spiel 2')
+INSERT INTO LOGENTRY VALUES(45,'2018-10-16 16:03:25.535000','PlayerName: Tom started game in session Spiel 2')
+INSERT INTO GAMESESSION VALUES(46,'Waiter','Waiting Game')
+INSERT INTO LOGENTRY VALUES(47,'2018-10-16 16:03:25.535000','PlayerName: Waiter opened new GameSession Waiting Game')
+INSERT INTO GAMESESSION_LOGENTRY VALUES(37,38)
+INSERT INTO GAMESESSION_LOGENTRY VALUES(37,39)
+INSERT INTO GAMESESSION_LOGENTRY VALUES(37,40)
+INSERT INTO GAMESESSION_LOGENTRY VALUES(37,41)
+INSERT INTO GAMESESSION_LOGENTRY VALUES(42,43)
+INSERT INTO GAMESESSION_LOGENTRY VALUES(42,44)
+INSERT INTO GAMESESSION_LOGENTRY VALUES(42,45)
+INSERT INTO GAMESESSION_LOGENTRY VALUES(46,47)
+ALTER SEQUENCE PUBLIC.HIBERNATE_SEQUENCE RESTART WITH 48
+COMMIT
+DISCONNECT

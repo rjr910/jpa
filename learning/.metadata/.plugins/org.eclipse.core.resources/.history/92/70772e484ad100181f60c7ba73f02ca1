@@ -4,12 +4,11 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import javax.persistence.CascadeType;
+import javax.persistence.CollectionTable;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 
 @Entity
 public class GameSession {
@@ -20,7 +19,7 @@ public class GameSession {
 	
 	private String sessionName;
 	private String playerName;
-	@OneToMany(cascade = {CascadeType.ALL})
+	@ElementCollection
 	private List<LogEntry> sessionLog = new ArrayList<>();
 	
 	public GameSession(String GameSessionName, String playerName) {
