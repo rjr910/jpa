@@ -9,7 +9,7 @@ import javax.persistence.Id;
 public class LogEntry {
 
 	@Id
-	private Integer id;
+	private Long id;
 	
 	private Date date;
 	private String message;
