@@ -5,11 +5,11 @@ import de.data.LogEntry;
 public class Main {
 
 	public static void main(String[] args) {
+		// TODO Auto-generated method stub
 
 		LogEntry e1 = new LogEntry(new Date(), "Erster Eintrag");
 		LogEntry e2 = new LogEntry(new Date(), "Zweiter Eintrag");
 		LogEntry e3 = new LogEntry(new Date(), "Dritter Eintrag");
-		
 	}
 
 }
