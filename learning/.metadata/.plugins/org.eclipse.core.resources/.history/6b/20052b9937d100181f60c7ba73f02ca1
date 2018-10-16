@@ -20,8 +20,6 @@ public class Main {
 		em.persist(e1);
 		em.persist(e2);
 		em.persist(e3);
-		em.close();
-		
 		
 	}
 
