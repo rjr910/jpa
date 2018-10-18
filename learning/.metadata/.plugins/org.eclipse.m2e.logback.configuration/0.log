@@ -3,3 +3,4 @@
 2018-10-16 11:37:36,571 [Worker-25: Downloading sources for hsqldb.jar] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/hsqldb/hsqldb/2.4.1/hsqldb-2.4.1-sources.jar
 2018-10-16 13:36:24,934 [Worker-58: Downloading sources for javax.persistence-api-2.2.jar] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/javax/persistence/javax.persistence-api/2.2/javax.persistence-api-2.2-sources.jar
 2018-10-16 13:36:25,029 [Worker-58: Downloading sources for javax.persistence-api-2.2.jar] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/javax/persistence/javax.persistence-api/2.2/javax.persistence-api-2.2-sources.jar
+2018-10-18 08:45:47,000 [Worker-3: Loading available Gradle versions] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
